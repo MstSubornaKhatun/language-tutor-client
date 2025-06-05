@@ -22,19 +22,12 @@ const Register = () => {
     })
   };
   return (
-
-<div className="hero bg-base-200 min-h-screen">
-  <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="text-center lg:text-left">
-      <p>lottie</p>
-    </div>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-      <div className="card-body">
- <h2 className="font-semibold text-2xl text-center">
+ <div className="flex justify-center min-h-screen items-center bg-blue-200">
+      <div className="card w-full max-w-sm shrink-0 shadow-2xl py-5 bg-blue-50">
+        <h2 className="font-semibold text-2xl text-center text-blue-600">
           Register your account
         </h2>
-       
-   <form onSubmit={handleRegister} className="">
+        <form onSubmit={handleRegister} className="card-body">
           <fieldset className="fieldset">
             {/* Name */}
             <label className="label">Name</label>
@@ -74,7 +67,7 @@ const Register = () => {
                 name="password"
                 required
                 placeholder="Password"
-                minLength="8"
+                minLength="6"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
               />
@@ -86,14 +79,15 @@ const Register = () => {
               At least one lowercase letter <br />
               At least one uppercase letter
             </p>
-
-            <button type="submit" className="btn btn-neutral mt-4">
+            <button
+              type="submit"
+              className="btn bg-blue-600 text-white hover:bg-blue-700 mt-4"
+            >
               Register
             </button>
-
             <p className="font-semibold text-center pt-5">
               Already Have An Account?{" "}
-              <Link className="text-red-500" to="/auth/login">
+              <Link className="text-blue-500" to="/auth/login">
                 Login
               </Link>
             </p>
@@ -101,11 +95,6 @@ const Register = () => {
         </form>
       </div>
     </div>
-  </div>
-</div>
-
-
-
 
 
 
