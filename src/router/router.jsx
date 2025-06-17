@@ -9,7 +9,6 @@ import AddTutorials from "../pages/AddTutorials/AddTutorials";
 import FindTutors from "../pages/FindTutors/FindTutors";
 import MyTutorials from "../pages/MyTutorials/MyTutorials";
 import PrivateRoute from "../routes/PrivateRoute";
-import AddTutor from "../pages/AddTutor/AddTutor";
 import TutorUpdate from "../pages/MyTutorials/TutorUpdate";
 import LanguageFindTutors from "../pages/LanguageFindTutors/LanguageFindTutors";
 import MyBooking from "../pages/MyBookedTutorial/MyBooking";
@@ -75,14 +74,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "addTutor",
-        element: (
-          <PrivateRoute>
-            <AddTutor></AddTutor>
-          </PrivateRoute>
-        ),
-      },
+      
       {
         path: "tutorUpdate/:id",
         loader: ({ params }) =>
