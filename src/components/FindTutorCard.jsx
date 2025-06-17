@@ -1,74 +1,54 @@
 import React from "react";
-import { Link } from "react-router";
+import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const FindTutorCard = () => {
+const FindTutorCard = ({ tutor }) => {
+  const { _id, language, name, photo, description, review } = tutor;
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto mt-5 mb-5">
-      {/* Card 1 */}
-      <div className="bg-white  rounded-xl shadow-md hover:shadow-lg transition p-4">
-        <img
-          src="https://i.ibb.co/Kz2Hbt1k/Screenshot-2025-05-24-194353.png"
-          alt="English"
-          className="w-full h-48 object-cover rounded-lg mb-4"
-        />
-        <h2 className="text-xl font-bold text-gray-800 ">English</h2>
-        <p className="text-gray-600 my-2">
-          Fluent English tutor with 5+ years experience in spoken & academic
-          English.
-        </p>
-        <div className="flex justify-between items-center mt-4">
-          <span className="font-medium text-blue-600 400">$25/hr</span>
-          <span className="text-sm text-gray-500 400">18 Reviews</span>
-        </div>
-        <Link to="find-tutor-details">
-          <button className="mt-4 w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition">
-            Details
-          </button>
-        </Link>
-      </div>
+    <div className="w-11/12 mx-auto mt-5 mb-5">
+      <div className="max-w-4xl mx-auto p-6 bg-base-100 shadow-xl rounded-2xl transition hover:shadow-2xl dark:bg-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+          {/* Image */}
+          <img
+            src={photo}
+            alt={name}
+            className="w-full h-64 object-cover rounded-lg"
+          />
 
-      {/* Card 2 */}
-      <div className="bg-white  rounded-xl shadow-md hover:shadow-lg transition p-4">
-        <img
-          src="https://i.ibb.co/Kz2Hbt1k/Screenshot-2025-05-24-194353.png"
-          alt="Spanish"
-          className="w-full h-48 object-cover rounded-lg mb-4"
-        />
-        <h2 className="text-xl font-bold text-gray-800 ">Spanish</h2>
-        <p className="text-gray-600 my-2">
-          Native Spanish speaker and certified tutor specializing in beginners.
-        </p>
-        <div className="flex justify-between items-center mt-4">
-          <span className="font-medium text-blue-600 400">$20/hr</span>
-          <span className="text-sm text-gray-500 400">22 Reviews</span>
-        </div>
-        <Link to="find-tutor-details">
-          <button className="mt-4 w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition">
-            Details
-          </button>
-        </Link>
-      </div>
+          {/* Info */}
+          <div className="space-y-3">
+            <h2 className="text-2xl font-bold text-base-content dark:text-white flex items-center">
+              {name}
+              {review && (
+                <span className="flex items-center ml-2 text-yellow-500">
+                  {review} <FaStar className="ml-1" />
+                </span>
+              )}
+            </h2>
 
-      {/* Card 3 */}
-      <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-4">
-        <img
-          src="https://i.ibb.co/Kz2Hbt1k/Screenshot-2025-05-24-194353.png"
-          alt="Japanese"
-          className="w-full h-48 object-cover rounded-lg mb-4"
-        />
-        <h2 className="text-xl font-bold text-gray-800 ">Japanese</h2>
-        <p className="text-gray-600 my-2">
-          JLPT N1 passed tutor helping beginners in grammar and conversation.
-        </p>
-        <div className="flex justify-between items-center mt-4">
-          <span className="font-medium text-blue-600 400">$30/hr</span>
-          <span className="text-sm text-gray-500 400">15 Reviews</span>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              <span className="font-semibold">Language:</span>{" "}
+              <span className="text-base-content dark:text-white">{language}</span>
+            </p>
+
+            {review && (
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="font-semibold">Review:</span> {review}
+              </p>
+            )}
+
+            <p className="text-sm text-base-content dark:text-gray-300">
+              {description?.length > 150
+                ? `${description.slice(0, 150)}...`
+                : description}
+            </p>
+
+            <Link to={`/find-tutor/${_id}`} className="btn btn-primary w-full">
+              View Details
+            </Link>
+          </div>
         </div>
-        <Link to="find-tutor-details">
-          <button className="mt-4 w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition">
-            Details
-          </button>
-        </Link>
       </div>
     </div>
   );

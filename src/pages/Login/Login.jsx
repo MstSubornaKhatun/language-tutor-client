@@ -1,10 +1,15 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
 import SocialLogin from '../../Shared/SocialLogin';
 
 const Login = () => {
   const {signInUser} =use(AuthContext);
+  const location =useLocation();
+  const navigate = useNavigate();
+  const from = location.state || '/';
+
+
       const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,6 +21,7 @@ const Login = () => {
     signInUser(email, password)
     .then (result => {
       console.log(result.user);
+      navigate(from);
     })
     .catch(error => {
       console.log(error);
@@ -29,7 +35,7 @@ const Login = () => {
         </h2>
       
         {/* Google */}
-        <SocialLogin/>
+        <SocialLogin  from={from}></SocialLogin>
    
 
           <div className="divider pl-10 pr-10">OR</div>

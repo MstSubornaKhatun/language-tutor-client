@@ -1,59 +1,92 @@
 import React from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 const FindTutorDetails = () => {
-  // Static demo data
-  const tutor = {
-    image: "https://i.ibb.co/Kz2Hbt1k/Screenshot-2025-05-24-194353.png",
-    name: "Sarah Johnson",
-    language: "English",
-    description:
-      "Experienced English tutor with a passion for helping students succeed. Specializes in grammar, pronunciation, and business English.",
-    price: "$25/hour",
-    review: 18,
-  };
+  const { _id, name, photo, description, price, language } = useLoaderData();
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   const handleBook = () => {
-    // SweetAlert for Success
-Swal.fire({
-  position: "top-center",
-  icon: "success",
-  title: "Your work has been saved",
-  showConfirmButton: false,
-  timer: 1500
-});
+    const bookingData = {
+      tutorId: _id,
+      name,
+      photo,
+      language,
+      price,
+      userEmail: user.email,
+      reviewGiven: false,
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const token = localStorage.getItem("access-token");
+
+
+    // Step 1: Check if already booked
+    fetch(`http://localhost:3000/bookings?email=${user.email}&tutorId=${_id}`, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((existingBookings) => {
+        if (existingBookings.length > 0) {
+          Swal.fire("You already booked this tutor!", "", "warning");
+        } else {
+          // Step 2: Book now
+   fetch("http://localhost:3000/bookings", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    authorization:` Bearer ${token}`, // 👈 Token পাঠানো হচ্ছে
+  },
+  body: JSON.stringify(bookingData),
+})
+  .then((res) => {
+    if (res.status === 401) {
+      Swal.fire("Failed to book. Please login again.", "", "error");
+      return;
+    }
+    return res.json();
+  })
+  .then((data) => {
+    if (data?.insertedId) {
+      Swal.fire("Booked successfully!", "", "success");
+      navigate("/my-booking-tutors");
+    }
+  })
+            .catch(() => {
+              Swal.fire("Failed to book. Please login again.", "", "error");
+            });
+        }
+      });
   };
 
   return (
     <div className="max-w-3xl mx-auto my-10 p-6 bg-base-100 shadow-lg rounded-lg">
       <div className="grid md:grid-cols-2 gap-6 items-center">
-        {/* Image */}
-        <img
-          src={tutor.image}
-          alt={tutor.name}
-          className="w-full h-64 object-cover rounded-lg"
-        />
-
-        {/* Info */}
+        <img src={photo} alt={name} className="w-full h-64 object-cover rounded-lg" />
         <div>
-          <h2 className="text-2xl font-bold mb-2">{tutor.name}</h2>
-          <p className="text-sm font-medium mb-1 text-gray-500">
-            Language: <span className="text-base-content">{tutor.language}</span>
-          </p>
-          <p className="text-sm font-medium mb-1 text-gray-500">
-            Price: <span className="text-base-content">{tutor.price}</span>
-          </p>
-          <p className="text-sm font-medium mb-3 text-gray-500">
-            Total Reviews:{" "}
-            <span className="text-base-content font-semibold">
-              {tutor.review}
-            </span>
-          </p>
-          <p className="text-sm mb-4 text-base-content">
-            {tutor.description}
-          </p>
-
-          {/* Book Button */}
+          <h2 className="text-2xl font-bold mb-2">{name}</h2>
+          <p className="text-sm">Language: {language}</p>
+          <p className="text-sm">Price: ${price}</p>
+          <p className="text-sm mb-4">{description}</p>
           <button onClick={handleBook} className="btn btn-primary w-full">
             Book Now
           </button>
