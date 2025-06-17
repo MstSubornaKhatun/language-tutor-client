@@ -28,17 +28,10 @@ const FindTutorDetails = () => {
 
 
 
-
-
-
-
-
-
-
     const token = localStorage.getItem("access-token");
 
 
-    // Step 1: Check if already booked
+    
     fetch(`https://language-tutor-server.vercel.app/bookings?email=${user.email}&tutorId=${_id}`, {
       headers: {
         authorization: `Bearer ${token}`,
@@ -49,12 +42,12 @@ const FindTutorDetails = () => {
         if (existingBookings.length > 0) {
           Swal.fire("You already booked this tutor!", "", "warning");
         } else {
-          // Step 2: Book now
+         
    fetch("https://language-tutor-server.vercel.app/bookings", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    authorization:` Bearer ${token}`, // 👈 Token পাঠানো হচ্ছে
+    authorization:` Bearer ${token}`, 
   },
   body: JSON.stringify(bookingData),
 })
