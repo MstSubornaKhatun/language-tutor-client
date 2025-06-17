@@ -7,7 +7,6 @@ const SocialLogin = ({from}) => {
 
     const { signInWithGoogle } = use(AuthContext);
 
-
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
