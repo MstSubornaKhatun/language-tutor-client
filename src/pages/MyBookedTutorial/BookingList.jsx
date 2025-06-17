@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 const BookingLists = ({ bookingsCreatedByPromise }) => {
   const [bookings, setBookings] = useState([]);
 
+  
   useEffect(() => {
     bookingsCreatedByPromise.then((data) => setBookings(data));
   }, [bookingsCreatedByPromise]);
