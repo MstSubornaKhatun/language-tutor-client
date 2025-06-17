@@ -4,11 +4,11 @@ Welcome to *Language Exchange*, a user-friendly online platform to book language
 
 ## 🚀 Live Site
 
-👉 [Live Website Link](https://your-live-site-url.netlify.app)
+👉 [Live Website Link]()
 
-👉 [Client GitHub Repo](https://github.com/your-username/language-exchange-client)
+👉 [Client GitHub Repo](https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-MstSubornaKhatun)
 
-👉 [Server GitHub Repo](https://github.com/your-username/language-exchange-server)
+👉 [Server GitHub Repo](https://github.com/Programming-Hero-Web-Course4/b11a11-server-side-MstSubornaKhatun)
 
 ---
 
