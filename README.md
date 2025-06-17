@@ -4,7 +4,7 @@ Welcome to *Language Exchange*, a user-friendly online platform to book language
 
 ## 🚀 Live Site
 
-👉 [Live Website Link](https://glowing-sprinkles-238abb.netlify.app/)
+👉 [Live Website Link](https://majestic-gaufre-be71c9.netlify.app/)
 
 👉 [Client GitHub Repo](https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-MstSubornaKhatun)
 
