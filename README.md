@@ -1,12 +1,78 @@
-# React + Vite
+# 🌐 Language Exchange - Online Tutor Booking Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to *Language Exchange*, a user-friendly online platform to book language tutors with ease. This project is part of Assignment-11 of the Programming Hero course and mimics real-world tutor platforms like Preply and Italki.
 
-Currently, two official plugins are available:
+## 🚀 Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 [Live Website Link](https://your-live-site-url.netlify.app)
 
-## Expanding the ESLint configuration
+👉 [Client GitHub Repo](https://github.com/your-username/language-exchange-client)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👉 [Server GitHub Repo](https://github.com/your-username/language-exchange-server)
+
+---
+
+## 📌 Project Purpose
+
+This platform allows users to:
+- Find and book tutors by language.
+- Add, view, update, and delete tutorials.
+- Post reviews for tutors.
+- Securely manage bookings and personal tutorials.
+
+---
+
+## ✨ Key Features
+
+### 🔐 Authentication
+- Firebase Authentication
+- Google Sign-In
+- Protected Private Routes
+- JWT Authentication with Secure Token
+
+### 🏠 Home Page
+- Banner/Carousel
+- Statistics (Tutors, Reviews, Languages, Users)
+- Language Category Section (at least 9 cards)
+- Extra Sections like: Why Choose Us & Testimonials
+- Fully Responsive (Mobile, Tablet, Desktop)
+
+### 🔍 Tutor Search & Booking
+- Search tutors by language
+- View tutor details (protected route)
+- Book tutors
+- View “My Booked Tutors” with review button
+
+### 🧑‍🏫 Tutor Management
+- Add Tutorials (with user info)
+- View “My Tutorials” (edit/delete supported)
+- Update tutorial (via modal or separate route)
+
+### 🧪 Bonus Features
+- Dark/Light Theme Toggle 🌗
+- Loading Spinner during data fetch ⏳
+- Framer Motion Animation 💫
+
+---
+
+## 🛠 Technologies Used
+
+### Frontend:
+- React.js
+- React Router DOM
+- Tailwind CSS
+- DaisyUI / ShadCN (Optional)
+- Firebase Authentication
+- Framer Motion
+- SweetAlert2
+
+### Backend:
+- Node.js
+- Express.js
+- MongoDB (with Mongoose)
+- Firebase Admin SDK (for JWT verification)
+- CORS, Dotenv
+
+---
+
+## 📁 Folder Structure
