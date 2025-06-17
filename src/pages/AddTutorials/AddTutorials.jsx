@@ -13,7 +13,7 @@ const AddTutorials = () => {
 
 
     // send Tutor data to the db
-    fetch("http://localhost:3000/tutors", {
+    fetch("https://language-tutor-server.vercel.app/tutors", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -39,7 +39,7 @@ const FindTutorDetails = () => {
 
 
     // Step 1: Check if already booked
-    fetch(`http://localhost:3000/bookings?email=${user.email}&tutorId=${_id}`, {
+    fetch(`https://language-tutor-server.vercel.app/bookings?email=${user.email}&tutorId=${_id}`, {
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -50,7 +50,7 @@ const FindTutorDetails = () => {
           Swal.fire("You already booked this tutor!", "", "warning");
         } else {
           // Step 2: Book now
-   fetch("http://localhost:3000/bookings", {
+   fetch("https://language-tutor-server.vercel.app/bookings", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

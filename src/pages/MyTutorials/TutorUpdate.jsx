@@ -8,7 +8,7 @@ const TutorUpdate = () => {
     const [tutor, setTutor] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/tutors/${id}`)
+        fetch(`https://language-tutor-server.vercel.app/tutors/${id}`)
             .then(res => res.json())
             .then(data => setTutor(data))
             .catch(err => {
@@ -32,7 +32,7 @@ const TutorUpdate = () => {
             description
         };
 
-        fetch(`http://localhost:3000/tutors/${id}`, {
+        fetch(`https://language-tutor-server.vercel.app/tutors/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

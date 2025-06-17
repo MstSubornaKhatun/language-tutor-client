@@ -11,16 +11,16 @@ const Stats = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const tutorRes = await fetch("http://localhost:3000/stats/tutors-count");
+        const tutorRes = await fetch("https://language-tutor-server.vercel.app/stats/tutors-count");
         const tutorData = await tutorRes.json();
 
-        const langRes = await fetch("http://localhost:3000/stats/languages-count");
+        const langRes = await fetch("https://language-tutor-server.vercel.app/stats/languages-count");
         const langData = await langRes.json();
 
-        const reviewRes = await fetch("http://localhost:3000/stats/reviews-count");
+        const reviewRes = await fetch("https://language-tutor-server.vercel.app/stats/reviews-count");
         const reviewData = await reviewRes.json();
 
-        const userRes = await fetch("http://localhost:3000/stats/users-count");
+        const userRes = await fetch("https://language-tutor-server.vercel.app/stats/users-count");
         const userData = await userRes.json();
 
         setStats({

@@ -24,7 +24,7 @@ const TutorLists = ({ tutorsCreatedByPromise }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/tutors/${_id}`, {
+        fetch(`https://language-tutor-server.vercel.app/tutors/${_id}`, {
           method: 'DELETE'
         })
         .then(res => res.json())

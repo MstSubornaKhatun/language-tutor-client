@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/find-tutors",
-        loader: () => fetch("http://localhost:3000/tutors"),
+        loader: () => fetch("https://language-tutor-server.vercel.app/tutors"),
         Component: FindTutors,
       },
       {
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       {
         path: "/find-tutor/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/tutors/${params.id}`),
+          fetch(`https://language-tutor-server.vercel.app/tutors/${params.id}`),
         element: (
           <PrivateRoute>
             <FindTutorDetails />
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
       {
         path: "tutorUpdate/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/tutors/${params.id}`),
+          fetch(`https://language-tutor-server.vercel.app/tutors/${params.id}`),
         element: (
           <PrivateRoute>
             <TutorUpdate></TutorUpdate>

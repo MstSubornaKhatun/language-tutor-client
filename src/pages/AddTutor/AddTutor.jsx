@@ -30,7 +30,7 @@ const AddTutor = () => {
         // console.log(newTutor)
 
         // save Tutor to the database
-        axios.post('http://localhost:3000/tutors', data)
+        axios.post('https://language-tutor-server.vercel.app/tutors', data)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({

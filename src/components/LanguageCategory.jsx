@@ -10,7 +10,7 @@ const LanguageCategory = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch("http://localhost:3000/all-tutors")
+    fetch("https://language-tutor-server.vercel.app/all-tutors")
       .then((res) => res.json())
       .then((data) => {
         const uniqueLanguages = [

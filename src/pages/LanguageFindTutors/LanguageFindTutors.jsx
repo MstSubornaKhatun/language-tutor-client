@@ -9,7 +9,7 @@ const LanguageFindTutors = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/tutors-by-language?language=${language}`)
+    fetch(`https://language-tutor-server.vercel.app/tutors-by-language?language=${language}`)
       .then((res) => res.json())
       .then((data) => setTutors(data));
   }, [language]);
@@ -25,7 +25,7 @@ const LanguageFindTutors = () => {
       reviewGiven: false,
     };
 
-    fetch("http://localhost:3000/bookings", {
+    fetch("https://language-tutor-server.vercel.app/bookings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(bookingData),

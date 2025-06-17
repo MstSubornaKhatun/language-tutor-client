@@ -13,7 +13,7 @@ const BookingLists = ({ bookingsCreatedByPromise }) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/bookings/review/${id}`, {
+      const res = await fetch(`https://language-tutor-server.vercel.app/bookings/review/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
