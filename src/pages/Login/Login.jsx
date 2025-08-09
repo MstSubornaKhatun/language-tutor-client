@@ -1,7 +1,5 @@
-
-
-import React, { useContext } from 'react';  // useContext হবে use না
-import { Link, useLocation, useNavigate } from 'react-router'; // react-router থেকে import হবে react-router-dom থেকে
+import React, { useContext } from 'react';  
+import { Link, useLocation, useNavigate } from 'react-router'; 
 import { AuthContext } from '../../context/AuthContext/AuthContext';
 import SocialLogin from '../../Shared/SocialLogin';
 
