@@ -8,7 +8,6 @@ const MyBooking = () => {
   const { user } = useAuth();
   const {bookingsCreatedByPromise} = useBookingsApi();
 
-
   return (
     <Suspense fallback={<Loading />}>
       <BookingLists
