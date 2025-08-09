@@ -14,7 +14,7 @@ const MyTutorials = () => {
         <Suspense fallback={<Loading />}>
             <TutorLists tutorsCreatedByPromise={tutorsCreatedByPromise(user.email)} />
         </Suspense>
-    );
+    ); 
 };
 
 export default MyTutorials;
