@@ -61,7 +61,7 @@ const TutorLists = ({ tutorsCreatedByPromise }) => {
           </Link>
           </p>
           <Link to="/add-tutorials">
-            <button className="px-5 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition">
+            <button className="px-5 py-2 btn btn-primary w-full transition">
               Add Tutorial
             </button>
           </Link>

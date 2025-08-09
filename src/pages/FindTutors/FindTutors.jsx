@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";  // এটা import করতে হবে
 import FindTutorCard from "../../components/FindTutorCard";
+import Loading from "../../components/Loading";
 
 const FindTutors = () => {
   const [allTutors, setAllTutors] = useState([]);
@@ -52,7 +54,7 @@ const FindTutors = () => {
         )}
 
         {tutors.length === 0 && !error && (
-          <p className="text-center text-gray-500">No tutors found.</p>
+         <Loading/>
         )}
 
         {tutors.map((tutor) => (

@@ -12,10 +12,12 @@ import PrivateRoute from "../routes/PrivateRoute";
 import TutorUpdate from "../pages/MyTutorials/TutorUpdate";
 import LanguageFindTutors from "../pages/LanguageFindTutors/LanguageFindTutors";
 import MyBooking from "../pages/MyBookedTutorial/MyBooking";
+import ErrorPage from "../components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage />,
     Component: RootLayout,
     children: [
       {
