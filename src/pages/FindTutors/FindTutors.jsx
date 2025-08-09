@@ -54,7 +54,7 @@ const FindTutors = () => {
         )}
 
         {tutors.length === 0 && !error && (
-         <Loading/>
+         <Loading/>  
         )}
 
         {tutors.map((tutor) => (
