@@ -6,7 +6,6 @@ const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
   const [theme, setTheme] = useState("light");
 
-  
     const handleSignOut = () =>{
         signOutUser()
         .then(() =>{
