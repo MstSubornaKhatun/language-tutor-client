@@ -37,6 +37,7 @@ const Footer = () => {
           </ul>
         </div>
       </footer>
+      
 
       {/* Bottom Section */}
       <footer className="border-t border-gray-300 dark:border-gray-700 py-4 w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
